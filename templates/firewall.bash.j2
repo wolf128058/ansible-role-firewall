@@ -33,8 +33,9 @@ iptables -P OUTPUT ACCEPT
 # Remove all rules and chains.
 iptables -t nat -F
 iptables -t mangle -F
-iptables -F
-iptables -X
+iptables -F INPUT
+iptables -F OUTPUT
+iptables -F FORWARD
 {% endif %}
 
 # Accept traffic from loopback interface (localhost).
